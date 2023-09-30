@@ -23,7 +23,7 @@ requirements:
     - pbr
     - pip
     - python
-    - numpy >=1.16.0
+    - numpy
   run:
     - python
     - {{ pin_compatible('numpy') }}
