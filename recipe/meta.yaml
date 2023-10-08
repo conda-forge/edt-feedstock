@@ -20,6 +20,7 @@ requirements:
     - pbr
     - pip
     - python
+    - cython
     - numpy >=1.16.0
   run:
     - python
