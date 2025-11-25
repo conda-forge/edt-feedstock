@@ -1,13 +1,13 @@
 {% set name = "edt" %}
-{% set version = "2.4.1" %}
+{% set version = "3.0.0" %}
 
 package:
   name: {{ name|lower }}
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 854d828ded5d2bf9ae0be1999d6b84a5db0d254e8c542d6bd39bff9e1f3d4852
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  sha256: d65004ca21bdeacd7168070a9b581fd9c449e9063397540c22bc5a9aaec3874e
 
 build:
   number: 0
@@ -17,7 +17,7 @@ requirements:
   build:
     - python                                 # [build_platform != target_platform]
     - cross-python_{{ target_platform }}     # [build_platform != target_platform]
-    - cython <3                              # [build_platform != target_platform]
+    - cython                                 # [build_platform != target_platform]
     - numpy                                  # [build_platform != target_platform]
     - {{ compiler('cxx') }}
     - {{ stdlib("c") }}
@@ -25,11 +25,11 @@ requirements:
     - pbr
     - pip
     - python
-    - cython <3
+    - cython
     - numpy
+    - setuptools
   run:
     - python
-    - {{ pin_compatible('numpy') }}
 
 test:
   imports:
@@ -37,9 +37,9 @@ test:
 
 about:
   home: https://github.com/seung-lab/euclidean-distance-transform-3d
-  license: GPL-3.0-or-later
-  license_family: GPL
-  license_file: LICENSE
+  license: LGPL-3.0-or-later
+  license_family: LGPL
+  license_file: COPYING.LESSER
   summary: Euclidean distance transform for multi-label 3D anisotropic images.
   description: Compute the Euclidean Distance Transform of a 1d, 2d, or 3d labeled image containing multiple labels in a single pass with support for anisotropic dimensions.
 
@@ -49,3 +49,4 @@ about:
 extra:
   recipe-maintainers:
     - william-silversmith
+    - stuarteberg
