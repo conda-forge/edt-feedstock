@@ -1,5 +1,5 @@
 {% set name = "edt" %}
-{% set version = "3.1.0" %}
+{% set version = "3.1.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,10 +7,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: c977d78e3bb623e0c88af9df8558f24db871e149c6664d066a07bfe5a7fa20c1
+  sha256: 4b0ab5d898077eda76d1ebdec6e3a4085fd33d4c85195d71abf464ff225915c5
 
 build:
-  number: 1
+  number: 0
   script: {{ PYTHON }} -m pip install . -vv
 
 requirements:
